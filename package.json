@@ -1,0 +1,46 @@
+{
+  "name": "travelwizard",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "pnpm --filter @travelwizard/web dev --hostname 127.0.0.1 --port 3210",
+    "worker": "pnpm --filter @travelwizard/worker dev",
+    "companion": "pnpm --filter @travelwizard/local-companion dev",
+    "build": "pnpm --filter @travelwizard/domain build && pnpm --filter @travelwizard/maps build && pnpm --filter @travelwizard/browser-policy build && pnpm --filter @travelwizard/providers build && pnpm --filter @travelwizard/ocr build && pnpm --filter @travelwizard/db build && pnpm --filter @travelwizard/worker build && pnpm --filter @travelwizard/local-companion build && pnpm --filter @travelwizard/web build",
+    "typecheck": "pnpm --filter @travelwizard/domain typecheck && pnpm --filter @travelwizard/maps typecheck && pnpm --filter @travelwizard/browser-policy typecheck && pnpm --filter @travelwizard/providers typecheck && pnpm --filter @travelwizard/ocr typecheck && pnpm --filter @travelwizard/db typecheck && pnpm --filter @travelwizard/worker typecheck && pnpm --filter @travelwizard/local-companion typecheck && pnpm --filter @travelwizard/web typecheck",
+    "lint": "eslint . --max-warnings=0",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "e2e": "node tests/e2e/server-harness.mjs",
+    "security": "pnpm audit --audit-level moderate",
+    "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm build && pnpm e2e && pnpm security"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.49.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^6.0.2",
+    "@vitest/coverage-v8": "^4.1.7",
+    "autoprefixer": "^10.4.20",
+    "esbuild": "0.28.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.16",
+    "jsdom": "^25.0.1",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.2",
+    "vite": "^8.0.14",
+    "vitest": "^4.1.7"
+  },
+  "pnpm": {
+    "overrides": {
+      "postcss": "8.5.15"
+    }
+  }
+}

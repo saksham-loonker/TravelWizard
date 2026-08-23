@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@travelwizard/domain": ["packages/domain/src/index.ts"],
+      "@travelwizard/maps": ["packages/maps/src/index.ts"],
+      "@travelwizard/browser-policy": ["packages/browser-policy/src/index.ts"],
+      "@travelwizard/providers": ["packages/providers/src/index.ts"],
+      "@travelwizard/ocr": ["packages/ocr/src/index.ts"],
+      "@travelwizard/db": ["packages/db/src/index.ts"]
+    }
+  }
+}
